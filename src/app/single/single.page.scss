@@ -1,0 +1,52 @@
+.bg{
+  //background: url(../../assets/img/bg.jpg);
+  background-image: linear-gradient(to bottom,  rgba(255,255,255,0), #222428 100%),
+  url(../../assets/img/bg.jpg);
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  --background:none;
+  overflow: auto;
+}
+
+ion-content{
+ --ion-background-color:var(--ion-color-dark);
+}
+
+ion-card-subtitle{
+  margin-left: 0.8em;
+}
+.bgColor{
+  color:#fec72f;
+}
+
+.container-form-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: -0.5em;
+}
+
+
+.form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 350px;
+  height: 48px;
+  background-color: #eeb10a;
+  //background: linear-gradient(90deg, #f7b03a 0%, #413f3f 200%);
+  border-radius: 10px;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  padding-top: 5px;
+  transition: all 0.4s;
+  box-shadow: 0 10px 30px 0px rgba(57, 71, 82, 0.5);
+}
+.form-btn:hover {
+  background-color: #28333b;
+  box-shadow: 0 10px 30px 0px rgba(57, 71, 82, 0.8);
+}

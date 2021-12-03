@@ -1,0 +1,152 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar lines="none">
+     <ion-buttons slot="start" *ngIf="!toggled">
+       <ion-button>
+        <ion-icon name="grid" color="light"></ion-icon>
+       </ion-button>
+     </ion-buttons>
+     <ion-buttons slot="end" *ngIf="!toggled" (click)="toggle()">
+      <ion-button>
+       <ion-icon name="search" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-searchbar placeholder="Do your movie searches here"(ionCancel)="cancelSearch($event)"
+    [showCancelButton]="true" *ngIf="toggled" style="--border-radius:20px;">
+  </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h1 class="title">Now showing</h1>
+  <ion-segment (ionChange)="segmentChanged($event)" class="segment" value="all" scrollable="true">
+    <ion-segment-button value="all">All</ion-segment-button>
+    <ion-segment-button value="action">Action</ion-segment-button>
+    <ion-segment-button value="comedy">Comedy</ion-segment-button>
+    <ion-segment-button value="romantic">Romantic</ion-segment-button>
+    <ion-segment-button value="aventure">Aventure</ion-segment-button>
+  </ion-segment>
+
+  <div *ngIf="selectedSegmentall=='all'">
+    <div class="category-slider">
+      <ion-slides [options]="{slidesPerView :'auto',zomm: false, grabCursor:true}">
+        <ion-slide routerLink="/single">
+          <ion-col>
+            <ion-card>
+              <img src="../../assets/img/a1.jpg" alt="">
+            </ion-card>
+              <h4 class="title_first">Avengers End Game</h4>
+              <ion-card-subtitle>
+                <ion-icon name="star" class="bgColor"></ion-icon>
+                <ion-icon name="star" class="bgColor"></ion-icon>
+                <ion-icon name="star" class="bgColor"></ion-icon>
+                <ion-icon name="star-outline"></ion-icon>
+                <ion-icon name="star-outline"></ion-icon>
+              </ion-card-subtitle>
+          </ion-col>
+        </ion-slide>
+        <ion-slide>
+          <ion-col>
+            <ion-card>
+              <img src="../../assets/img/a2.jpg" alt="">
+            </ion-card>
+            <h4 class="title_second"style="margin-right: 3em;">Black Widown</h4>
+            <ion-card-subtitle>
+              <ion-icon name="star" class="bgColor"></ion-icon>
+              <ion-icon name="star" class="bgColor"></ion-icon>
+              <ion-icon name="star" class="bgColor"></ion-icon>
+              <ion-icon name="star-outline"></ion-icon>
+              <ion-icon name="star-outline"></ion-icon>
+            </ion-card-subtitle>
+          </ion-col>
+        </ion-slide>
+        <ion-slide>
+          <ion-col>
+            <ion-card>
+              <img src="../../assets/img/a3.jpg" alt="">
+            </ion-card>
+
+            <h4 class="title_second"style="margin-right: 3em;">Tenet Teathers</h4>
+            <ion-card-subtitle>
+              <ion-icon name="star" class="bgColor"></ion-icon>
+              <ion-icon name="star" class="bgColor"></ion-icon>
+              <ion-icon name="star" class="bgColor"></ion-icon>
+              <ion-icon name="star-outline"></ion-icon>
+              <ion-icon name="star-outline"></ion-icon>
+            </ion-card-subtitle>
+          </ion-col>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="ion-padding comming_position">
+      <h6>Coming soon</h6>
+
+      <h6>View all <ion-icon name="chevron-forward-outline" style="margin-bottom: -0.2em;"></ion-icon></h6>
+    </div>
+    <div class="category-slider" id="space_position">
+      <ion-slides [options]="{slidesPerView :'auto',zomm: false, grabCursor:true}">
+        <ion-slide>
+          <ion-col>
+            <ion-card>
+              <img src="../../assets/img/a4.jpg" alt="">
+            </ion-card>
+              <h4 class="title_first_slide">Wrath of Man</h4>
+              <ion-card-subtitle>
+                <ion-icon name="star" class="bgColor"></ion-icon>
+                <ion-icon name="star" class="bgColor"></ion-icon>
+                <ion-icon name="star" class="bgColor"></ion-icon>
+                <ion-icon name="star-outline"></ion-icon>
+                <ion-icon name="star-outline"></ion-icon>
+              </ion-card-subtitle>
+          </ion-col>
+        </ion-slide>
+        <ion-slide>
+          <ion-col>
+            <ion-card>
+              <img src="../../assets/img/a5.jpg" alt="">
+            </ion-card>
+            <h4 class="title_second_slide"style="margin-right: 3em;">President</h4>
+            <ion-card-subtitle>
+              <ion-icon name="star" class="bgColor"></ion-icon>
+              <ion-icon name="star" class="bgColor"></ion-icon>
+              <ion-icon name="star" class="bgColor"></ion-icon>
+              <ion-icon name="star-outline"></ion-icon>
+              <ion-icon name="star-outline"></ion-icon>
+            </ion-card-subtitle>
+          </ion-col>
+        </ion-slide>
+        <ion-slide>
+          <ion-col>
+            <ion-card>
+              <img src="../../assets/img/a6.jpg" alt="">
+            </ion-card>
+
+            <h4 class="title_second"style="margin-right: 3em;">Black Widow</h4>
+            <ion-card-subtitle>
+              <ion-icon name="star" class="bgColor"></ion-icon>
+              <ion-icon name="star" class="bgColor"></ion-icon>
+              <ion-icon name="star" class="bgColor"></ion-icon>
+              <ion-icon name="star-outline"></ion-icon>
+              <ion-icon name="star-outline"></ion-icon>
+            </ion-card-subtitle>
+          </ion-col>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+  <div *ngIf="selectedSegmentall !='all'">
+    <hr class="hrColor">
+    <div *ngIf="selectedSegmentaction=='action'">
+      <h2>ACTION</h2>
+    </div>
+    <div *ngIf="selectedSegmentcomedy=='comedy'">
+      <h2>COMEDY</h2>
+    </div>
+    <div *ngIf="selectedSegmentromantic=='romantic'">
+     <h2>ROMANTIC</h2>
+    </div>
+    <div *ngIf="selectedSegmentaventure=='aventure'">
+      <h3>AVENTURE</h3>
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,93 @@
+*{
+	font-family: Roboto,sans-serif;
+}
+
+ion-toolbar{
+  --background: rgb(8, 11, 22);
+}
+
+.title{
+  font-weight: bold;
+  margin-left: 0.5em;
+  color: white;
+}
+
+#space_position{
+  margin-bottom: 1.5em;
+  margin-top: -0.5em;
+}
+
+.comming_position{
+  display: flex;
+  justify-content: space-between;
+
+  h6{
+    color:white;
+    }
+
+}
+
+ion-content{
+  --background: rgb(8, 11, 22);
+}
+
+ion-segment-button {
+  --color-checked: #fec72d;
+  --color: rgb(167, 166, 166);
+  //--indicator-height: 0.2em;
+  //--indicator-color: #fec72d;
+  font-weight: bold;
+  text-transform: none;
+}
+
+.category-slider{
+    ion-slide{
+    width: 190px;
+    margin-right: 50em;
+    margin-bottom: 30px;
+    margin:-0.4em -0.5em;
+  }
+}
+
+ion-card{
+  border-radius:8px;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  --background:none;
+  overflow: auto;
+}
+
+.bgColor{
+  color:#fec72f;
+}
+
+ion-card-subtitle{
+  margin-right: 6.4em;
+}
+
+ion-slide{
+  .title_first{
+    font-size: 15px;
+    margin-right: 1.2em;
+    color: white;
+  }
+
+  .title_second{
+    font-size: 15px;
+    margin-right: 4.5em !important;
+    color: white;
+  }
+}
+
+.title_first_slide{
+  font-size: 15px;
+  margin-right:4.5em !important;
+  color: white;
+}
+
+.title_second_slide{
+  font-size: 15px;
+  margin-right:6em !important;
+  color: white;
+}
